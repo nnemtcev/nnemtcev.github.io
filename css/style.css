@@ -1,0 +1,232 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes buttonSlideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px; }
+
+.heading-secondary {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  background-image: linear-gradient(to right, #4e54c8da, #8f94fbd7);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent; }
+
+.heading-tertiary {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700; }
+
+.paragraph {
+  font-size: 1.2rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 30px; }
+
+.u-text-center {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 6rem; }
+
+.section-about {
+  background-color: #f7f7f7;
+  margin-top: -20vh;
+  padding: 12rem 0; }
+
+.section-projects {
+  padding: 5rem 0px; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  transition: all 0.2s;
+  border-radius: 10px;
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+
+.btn-white {
+  background-color: #fff;
+  color: #777; }
+
+.btn-move {
+  animation: buttonSlideUp 0.5s ease-in 0.5s;
+  animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #4e54c8da, #8f94fbd7), url("../img/code.jpg");
+  background-size: cover;
+  background-position: top;
+  /* Don't understand what background-position: top does??? */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+
+.heading-primary {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 30px; }
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    animation: moveInLeft 1s 0.5s ease-in-out;
+    animation-fill-mode: backwards; }
+
+#heading-primary-sub {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 12px; }
+
+.row {
+  max-width: 80rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: '';
+    display: table;
+    clear: both; }
+  .row [class^='col-'] {
+    float: left; }
+    .row [class^='col-']:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 12rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc((100% - 4rem) / 1.5); }
+  .row .col-1-of-4 {
+    width: calc((100% - 18rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc((100% - 12rem) / 2); }
+  .row .col-3-of-4 {
+    width: calc((100% - 6rem) / 1.33); }
+
+.footer {
+  padding: 50px 0;
+  background-color: #4e54c8da; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 20px; }
+    .footer__item a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+      color: #fff; }
+  .footer__copyright {
+    margin-left: 100px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff; }
+
+.composition__photo {
+  width: 55%; }
+
+.featured-project {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 35rem; }
+  .featured-project__side {
+    color: #fff;
+    height: 35rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
+    .featured-project__side--front {
+      background-color: #fff; }
+    .featured-project__side--back {
+      transform: rotateY(180deg); }
+      .featured-project__side--back-1 {
+        background-image: linear-gradient(to right bottom, #f2709c, #ff9472); }
+      .featured-project__side--back-2 {
+        background-image: linear-gradient(to right bottom, #83a4d4, #b6fbff); }
+      .featured-project__side--back-3 {
+        background-image: linear-gradient(to right bottom, #b993d6, #8ca6db); }
+  .featured-project__picture {
+    background-size: cover;
+    height: 250px; }
+    .featured-project__picture--1 {
+      background-image: url("../img/redditclone.png"); }
+  .featured-project__heading {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: linear-gradient(to right, #f2709c, #ff9472); }
+  .featured-project__details ul {
+    position: relative; }
+  .featured-project__details ul {
+    padding: 30px 0;
+    list-style: none;
+    width: 80%;
+    margin: 0 auto; }
+    .featured-project__details ul li {
+      color: #777;
+      text-align: center;
+      font-size: 20px; }
+      .featured-project__details ul li:not(:last-child) {
+        margin-bottom: 10px; }
+        .featured-project__details ul li:not(:last-child)::after {
+          content: '';
+          border-top: 1px solid #000; }
+  .featured-project:hover .featured-project__side--front {
+    transform: rotateY(-180deg); }
+  .featured-project:hover .featured-project__side--back {
+    transform: rotateY(0); }
+
+.logo {
+  height: 35px; }
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
